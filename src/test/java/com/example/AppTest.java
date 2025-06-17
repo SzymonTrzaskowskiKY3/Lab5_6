@@ -9,3 +9,5 @@ public class AppTest {
         assertTrue(true);
     } 
 }
+public class oby_blad{
+}
