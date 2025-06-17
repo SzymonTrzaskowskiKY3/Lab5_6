@@ -7,27 +7,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
-name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      
-name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
-      
-name: Build with Maven
-      run: mvn -B verify
+      - name: Build with Maven
+        run: mvn -B verify
 
-      
-name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
-      with:
-        organization: "SzymonTrzaskowskiKY3"
-        projectKey: "Lab5_6"      
-        projectName: "Lab5_6"
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+          organization: "SzymonTrzaskowskiKY3"
+          projectKey: "Lab5_6"
+          projectName: "Lab5_6"
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
