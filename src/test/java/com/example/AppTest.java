@@ -7,12 +7,9 @@ public class AppTest {
     @Test
     public void testApp() {
         assertTrue(true);
-    } 
-public class TestError {
-    public static void main(String[] args) {
-        int a = 10 / 0;  // <-- celowe dzielenie przez zero
     }
-}
 
-    
+    public static void main(String[] args) {
+        int a = 10 / 0;
+    }
 }
